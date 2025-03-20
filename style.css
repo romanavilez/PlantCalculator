@@ -1,0 +1,219 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.calc_container{
+    font-family: 'Bebas Neue';
+    position: relative;
+    background-color: #211720;
+    padding: 20px;
+    width: 350px;
+    height: 775px;
+    border-radius: 5%;
+}
+
+.calc_container::before {
+    content: "";
+    position: absolute;
+    top: -5px; 
+    left: -5px; 
+    right: -5px; 
+    bottom: -5px; 
+    z-index: -1;
+    background: linear-gradient(45deg, #000000, #ffffff);
+    border-radius: 5%; 
+}
+
+.calc_container .text_container{
+    color: white;
+    display: flex;
+    justify-content: center;
+    border-style: solid;
+    border-radius: 5px;
+    text-align: center;
+    height: 325px;
+}
+
+.calc_container .text_container #trailer_box{
+    border-right: 2px dashed white;
+}
+
+.calc_container .text_container #leftover_box {
+    margin-right: 10px;
+}
+
+.calc_container .text_container .output_text p{
+    margin: 0;
+    color: #9a8e9c;
+    font-size: 50px;
+}
+
+.calc_container .text_container .output_text h2{
+    color: white;
+    font-family: 'Bebas Neue';
+    background-color: transparent;
+    border-right: solid 5px transparent;
+    margin: 30px 5px 10px;
+    padding: 0px;
+    width: 150px;
+    height: 50px;
+    font-size: 40px;
+    text-align: right;
+}
+
+.calc_container .text_container .output_text h2.active{
+    border-right: solid 5px white;
+    animation: caretAnimation 1s infinite;
+}
+
+@keyframes caretAnimation {
+    0%, 100% {
+        border-color: white;
+    } 50% {
+        border-color: transparent;
+    }
+}
+
+.calc_container .text_container #result_text p{
+    margin: 0;
+    color: #9a8e9c;
+    font-size: 50px;
+}
+
+.calc_container .text_container #result_text h2{
+    text-align: right;
+    font-size: 40px;
+    border-right: solid 5px white;
+    animation: caretAnimation 1s infinite;
+}
+
+.calc_container .extra_features{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0px;
+}
+
+.calc_container .extra_features button{
+    color: white;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transform: scale(1.5);
+    transition: all ease 0.3s;
+}
+
+.calc_container .extra_features .radioButtons {
+    display: flex;
+    column-gap: 10px;
+}
+
+.calc_container .extra_features .radioButtons label {
+    background-color: white;
+    border-radius: 5px;
+    border: 2px solid #9a8e9c;
+    accent-color: black;
+    transition: all ease 0.3s;
+}
+
+.calc_container .extra_features .radioButtons label:hover {
+    background-color: #9a8e9c;
+    border-color: white;
+    color: white;
+    font-size: medium;
+    transform: scale(0.95);
+}
+
+.calc_container .extra_features .radioButtons label:active {
+    transform: scale(0.8);
+    background-color: #301934;
+}
+
+
+.calc_container .extra_features .radioButtons label:has(input:checked) {
+    background-color: #301934;
+    border-color: white;
+    color: white;
+}
+
+
+.calc_container .extra_features button:hover{
+    color: #9a8e9c;
+}
+
+.calc_container .extra_features button:active{
+    transform: scale(1.3) translateX(-4px);
+}
+
+
+.calc_container .digits_symbols{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.calc_container .digits_symbols button{
+    font-family: 'Bebas Neue';
+    border-radius: 10px;
+    font-size: 25px;
+    height: 72px;
+    transition: all ease 0.3s;
+}
+
+.calc_container .digits_symbols #next{
+    background-color: #9a8e9c;
+    color: white;
+}
+
+.calc_container .digits_symbols #equals{
+    background-color: transparent;
+    color: white;
+    transition: all ease 0.3s;
+}
+
+.calc_container .digits_symbols #clear{
+    color: #986d5a;
+}
+
+.calc_container .digits_symbols #clear:hover{
+    background-color: #986d5a;
+    color: white;
+}
+
+.calc_container .digits_symbols button:hover{
+    cursor: pointer;
+    transform: scale(0.95);
+    background-color: #9a8e9c;
+    color: white;
+    font-size: x-large;
+}
+
+.calc_container .digits_symbols button:active{
+    background-color: transparent;
+    border-color: white;
+    transform: scale(0.85);
+    font-size: x-large;
+}   
+
+.calc_container .digits_symbols .symbol:not(#equals){
+    color: #787276;
+}
+
+.calc_container .digits_symbols .symbol:not(#equals):hover{
+    background-color: #787276;
+    color: white;
+}
+
+.calc_container .digits_symbols button:nth-child(2){
+    grid-column: span 2;
+}
+
+.calc_container .digits_symbols button:not(#divide, #multiply, #subtract, #add, #equals){
+    margin-right: 10px;
+}
+
+.calc_container .digits_symbols button:not(#blank1, #zero, #blank2, #equals){
+    margin-bottom: 10px;
+}
