@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlantCalculator</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="icon" href="icon-calculator.png">
+</head>
+<body>
+    <div class="calc_container">
+        <div class="text_container">
+            <div id="result_text" style="display: none;">
+                <p># de plantas</p>
+                <h2 class="result">.</h2>
+            </div>
+            <div class="output_text" id="trailer_box">
+                <p>Trailas</p>
+                <h2 class="active" id="trailer"></h2>
+            </div>
+            <div class="output_text" id="leftover_box">
+                <p>Resto</p>
+                <h2 id="leftover"></h2>
+            </div>
+        </div>
+        <div class="extra_features">
+            <div class="radioButtons">
+                <label for="normal">
+                    <input type="radio" name='plant_type' id="normal">
+                    Normal
+                </label>
+                <label for="4inRound">
+                    <input type="radio" name='plant_type' id="4inRound">
+                    4in Round
+                </label>
+                <label for="4.5in">
+                    <input type="radio" name='plant_type' id="4.5in">
+                    4.5in
+                </label>
+                <label for="1gal">
+                    <input type="radio" name='plant_type' id="1gal">
+                    1Gal
+                </label>
+            </div>
+            <button id="backspace">
+                <span class="material-icons">backspace</span>
+            </button>
+        </div>
+        <div class="digits_symbols">
+            <!-- ROW 1 -->
+            <button id="clear">C</button>
+            <button id="next">Siguiente</button>
+            <button class="symbol" id="divide">/</button>
+            <!-- ROW 2 -->
+            <button class="digit" id="seven">7</button>
+            <button class="digit" id="eight">8</button>
+            <button class="digit" id="nine">9</button>
+            <button class="symbol" id="multiply">*</button>
+            <!-- ROW 3 -->
+            <button class="digit" id="four">4</button>
+            <button class="digit" id="five">5</button>
+            <button class="digit" id="six">6</button>
+            <button class="symbol" id="subtract">-</button>
+            <!-- ROW 4 -->
+            <button class="digit" id="one">1</button>
+            <button class="digit" id="two">2</button>
+            <button class="digit" id="three">3</button>
+            <button class="symbol" id="add">+</button>
+            <!-- ROW 5 -->
+            <button id="blank1"></button>
+            <button class="digit" id="zero">0</button>
+            <button id="blank2"></button>
+            <button class="symbol" id="equals">=</button>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
